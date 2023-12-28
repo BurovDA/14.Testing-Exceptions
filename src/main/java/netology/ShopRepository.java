@@ -26,15 +26,11 @@ public class ShopRepository {
      * @param product — добавляемый товар
      */
 
-     public void add(Product product) {
-        int productId = product.getId();
-        for (Product num : products) {
-            if (num.getId() == productId) {
-                throw new NotFoundException(productId);
-            }
-        }
+    public void add(Product product) {
         products = addToArray(products, product);
     }
+
+
     public Product[] findAll() {
         return products;
     }
@@ -66,5 +62,4 @@ public class ShopRepository {
         }
         return null;
     }
-
 }
